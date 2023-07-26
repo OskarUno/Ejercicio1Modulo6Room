@@ -3,6 +3,18 @@ package com.awakelab.oskar.ejercicio1modulo6room
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
+/*
+[ ] ReciclerView
+    [ ] Room
+        [ ] Dao
+        [ ] Base Datos
+        [ ] Entity
+    [ ] Crear Inteerface
+    [ ] Fragmento Listado
+    [ ] Fragmento Agregar
+    [ ] Navigation
+*/
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
