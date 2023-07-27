@@ -4,15 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 /*
-[ ] ReciclerView
-    [ ] Room
+  [ ] Navigation
+  [ ] Fragmento Agregar
+  [ ] Crear Inteerface
+     [ ] Room
         [ ] Dao
         [ ] Base Datos
         [ ] Entity
-    [ ] Crear Inteerface
-    [ ] Fragmento Listado
-    [ ] Fragmento Agregar
-    [ ] Navigation
+  [ ] Fragmento Listado
+  [ ] ReciclerView
 */
 
 class MainActivity : AppCompatActivity() {
