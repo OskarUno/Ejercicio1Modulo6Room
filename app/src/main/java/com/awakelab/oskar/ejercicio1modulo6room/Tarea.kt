@@ -7,8 +7,10 @@ import androidx.room.PrimaryKey
 data class Tarea(
     val nombre: String
 )
+{
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
+}
 
-@PrimaryKey(autoGenerate = true)
-var id: Long = 0
 
 
