@@ -24,6 +24,7 @@ class AgregarFragment : Fragment() {
     ): View? {
         binding = FragmentAgregarBinding.inflate(layoutInflater, container, false)
         initListener()
+        cargarTareas()
         return binding.root
     }
 
@@ -41,5 +42,13 @@ class AgregarFragment : Fragment() {
 
     }
 
+    private fun cargarTareas(){
+        val dao =  TareaBaseDatos.getDatabase(requireContext()).getTaskDao()
+        GlobalScope.launch{
+            val tareas = dao.getTareas()  //recuperacion de la tarea desde ddbb
+            val tareaRecuperada = tareas.joinToString ( "\n" ) {it.nombre}  //Convierte aformato con salto de linea
+            binding.tv2.text = tareaRecuperada   //Lo envia a la pantalla
+        }
 
+    }
 }
