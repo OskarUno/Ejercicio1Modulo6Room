@@ -39,8 +39,6 @@ android {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
-    implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.core:core-ktx:+'
 
     //Persistencia
     def room_version = "2.5.2"
@@ -54,7 +52,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    //Agrega
+    //Agrega para las corrutinas
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
