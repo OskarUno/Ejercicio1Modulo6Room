@@ -5,15 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.awakelab.oskar.ejercicio1modulo6room.databinding.FragmentAgregarBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-
-lateinit var binding: FragmentAgregarBinding
-lateinit var repositorio: Repositorio
 
 class AgregarFragment : Fragment() {
-
+    lateinit var binding: FragmentAgregarBinding
+    private val tareaViewModel: TareaViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,14 +20,9 @@ class AgregarFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentAgregarBinding.inflate(layoutInflater, container, false)
-        initRepositorio()
         initListener()
         cargarTareas()
         return binding.root
-    }
-
-    private fun initRepositorio() {
-        repositorio = Repositorio(TareaBaseDatos.getDatabase(requireContext()).getTaskDao())
     }
 
     private fun initListener() {
@@ -41,14 +33,12 @@ class AgregarFragment : Fragment() {
     }
 
     private fun guardarTarea(texto: String) {
-
         val tareaDao = Tarea(texto)
-        GlobalScope.launch { repositorio.insertTask(tareaDao) }
+        tareaViewModel.insertarTarea(tareaDao)
     }
 
     private fun cargarTareas() {
-
-        repositorio.getTareas().observe(requireActivity()) {
+        tareaViewModel.obtenerTareas().observe(viewLifecycleOwner) {
             //recuperacion de la tarea desde ddbb
             val tareaRecuperada =
                 it.joinToString("\n") { it.nombre }  //Convierte aformato con salto de linea

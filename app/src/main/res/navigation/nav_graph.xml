@@ -19,9 +19,4 @@
         android:name="com.awakelab.oskar.ejercicio1modulo6room.ListadoFragment"
         android:label="fragment_listado"
         tools:layout="@layout/fragment_listado" />
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.awakelab.oskar.ejercicio1modulo6room.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
 </navigation>

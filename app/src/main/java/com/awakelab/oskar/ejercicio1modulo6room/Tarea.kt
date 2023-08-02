@@ -5,9 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tabla_tarea")
 data class Tarea(
-    val nombre: String
-)
-{
+    val nombre: String,
+) {
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0
 }

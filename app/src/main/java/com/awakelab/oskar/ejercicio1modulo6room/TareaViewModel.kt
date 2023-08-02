@@ -17,7 +17,6 @@ class TareaViewModel(aplicacion: Application) : AndroidViewModel(aplicacion) {
         return repositorio.getTareas()
     }
 
-    //viewModelScope.launch El view model crea una corrutina para ejecutar las funciones suspendidas
     fun insertarTarea(tarea: Tarea) = viewModelScope.launch {
         repositorio.insertTask(tarea)
     }

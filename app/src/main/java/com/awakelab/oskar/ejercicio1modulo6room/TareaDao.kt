@@ -7,8 +7,10 @@ import androidx.room.Query
 
 @Dao
 interface TareaDao {
+
+    //    @Insert(onConflict = OnConflictStrategy.REPLACE)
     @Insert
-    fun insertarTarea(tarea: Tarea)
+    suspend fun insertarTarea(tarea: Tarea)
 
     @Query("select * from tabla_tarea order by id ASC")
     fun getTareas(): LiveData<List<Tarea>>
